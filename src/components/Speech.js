@@ -5,7 +5,8 @@ import "./mic.css"
 import listeningAnim from "./listening-anim.mp4"
 import axios from 'axios';
 import { API } from '../config';
-import { useSpeechSynthesis } from 'react-speech-kit';
+import Speech from 'speak-tts'
+
 const Dictaphone = () => {
   const [reply,setReply]=useState("");
   const {
@@ -16,7 +17,7 @@ const Dictaphone = () => {
   } = useSpeechRecognition();
   axios.defaults.baseURL=API;
   const [res,setRes]=useState()
-  const {speak}=useSpeechSynthesis();
+  const say =new Speech()
 
   
 
@@ -38,16 +39,17 @@ const Dictaphone = () => {
       
     },[listening,transcript])
 
-    useEffect(()=>{
-      const speech=()=>{
-        if (res && res.answer !== undefined) {
-          console.log(res.answer);
-          speak({text: res.answer })
-          setReply(res.answer)
-        }}
-        speech();
-    },[res,speak])
 
+    useEffect(() => {
+    const speech = () => {
+      if (res && res.answer !== undefined) {
+        console.log(res.answer);
+        say.speak({ text: res.answer})
+          setReply(res.answer)
+          }
+      }
+    speech();
+  }, [res]);
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
