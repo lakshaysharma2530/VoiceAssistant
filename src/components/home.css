@@ -1,0 +1,54 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-anim{
+    /* background-color: aliceblue; */
+    height: 300px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    animation: anim 1s infinite linear;
+}
+.load{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+@keyframes anim {
+    0%{
+        box-shadow: 0px 0px 10px 0px #A377D6;
+    }
+    50%{
+        box-shadow: 0px 0px 100px 0px #A377D6;
+    }
+    100%{
+        box-shadow: 0px 0px 10px 0px #A377D6;
+    }
+    0%{
+        box-shadow: -5px 0px 5px 0px #A377D6;
+    }
+    25%{
+        box-shadow: 0px -5px 5px 0px #A377D6;
+    }
+    50%{
+        
+
+        box-shadow: 5px 0px 5px 0px #A377D6;
+    }
+    75%{
+        box-shadow: 0px 5px 5px 0px #A377D6;
+    }
+    100%{
+        box-shadow: -5px 0px 5px 0px #A377D6;
+    }
+    
+    
+}
