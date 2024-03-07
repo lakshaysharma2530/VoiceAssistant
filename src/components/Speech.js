@@ -17,7 +17,7 @@ const Dictaphone = () => {
   } = useSpeechRecognition();
   axios.defaults.baseURL=API;
   const [res,setRes]=useState()
-  const say =new Speech()
+  
 
   
 
@@ -42,6 +42,7 @@ const Dictaphone = () => {
 
     useEffect(() => {
     const speech = () => {
+      const say =new Speech()
       if (res && res.answer !== undefined) {
         console.log(res.answer);
         say.speak({ text: res.answer})
