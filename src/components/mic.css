@@ -1,5 +1,5 @@
 .upr-div{
-    height: 45vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,14 @@
     }
     .listenanim{
         height: 60%;
-        padding-top: 130px;
+        padding-top: 10px;
     }
-    
+    .mic{
+        width: 20px;
+        height: 20px;
+        border: 20px solid #A377D6;
+    }
+    .upr-div{
+        height: 55vh;
+    }
 }
