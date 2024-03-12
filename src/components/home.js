@@ -15,7 +15,7 @@ const Home=()=>{
         return (
             <div className="load">
                  <div className="logo-anim">
-                 <img className='logo' src={logo} height="95px" alt='sharda logo'/>
+                 <img className='logo' src={logo} height="70px" alt='sharda logo'/>
                  </div>
             </div>
         )
